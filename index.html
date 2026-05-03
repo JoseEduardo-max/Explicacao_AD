@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Decision Tree</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+
+  <style>
+    h1, h2, h3 { color: #00d4ff; }
+    p { font-size: 22px; }
+    li { font-size: 20px; }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 -->
+<section>
+  <h1>Árvore de Decisão</h1>
+  <p>Como o modelo pensa e toma decisões</p>
+</section>
+
+<!-- SLIDE 2 -->
+<section>
+  <h2>O que ela faz de verdade?</h2>
+  <ul>
+    <li>Divide os dados em grupos</li>
+    <li>Busca deixar os grupos mais puros</li>
+    <li>Continua até chegar em uma decisão</li>
+  </ul>
+  <p><strong>Ideia:</strong> separar dados parecidos</p>
+</section>
+
+<!-- SLIDE 3 -->
+<section>
+  <h2>Impureza</h2>
+  <ul>
+    <li>Puro → uma única classe</li>
+    <li>Impuro → mistura de classes</li>
+  </ul>
+  <p>Objetivo: diminuir a impureza</p>
+</section>
+
+<!-- SLIDE 4 -->
+<section>
+  <h2>Exemplo</h2>
+  <pre>
+Grupo   Classe
+A       Cachorro
+B       Cachorro
+C       Gato
+  </pre>
+  <p>→ Grupo impuro</p>
+</section>
+
+<!-- SLIDE 5 -->
+<section>
+  <h2>Como a árvore divide?</h2>
+  <ul>
+    <li>Idade > 18?</li>
+    <li>Altura < 1.70?</li>
+    <li>Tem pelos?</li>
+  </ul>
+  <p>→ Cada pergunta cria uma divisão</p>
+</section>
+
+<!-- SLIDE 6 -->
+<section>
+  <h2>Como escolhe a melhor divisão?</h2>
+  <ol>
+    <li>Testa várias perguntas</li>
+    <li>Mede a impureza</li>
+    <li>Escolhe a melhor</li>
+  </ol>
+</section>
+
+<!-- SLIDE 7 -->
+<section>
+  <h2>Gini</h2>
+  <p>Gini = 1 - Σ p²</p>
+  <ul>
+    <li>0 = perfeito</li>
+    <li>0.5 = bagunçado</li>
+  </ul>
+</section>
+
+<!-- SLIDE 8 -->
+<section>
+  <h2>Entropia</h2>
+  <p>Entropy = - Σ p log₂(p)</p>
+  <ul>
+    <li>0 = organizado</li>
+    <li>Alto = bagunça</li>
+  </ul>
+</section>
+
+<!-- SLIDE 9 -->
+<section>
+  <h2>Ganho de Informação</h2>
+  <p>Quanto uma divisão melhora os dados</p>
+  <p>→ Escolhe a maior redução de impureza</p>
+</section>
+
+<!-- SLIDE 10 -->
+<section>
+  <h2>Como a árvore cresce</h2>
+  <ol>
+    <li>Começa com todos os dados</li>
+    <li>Escolhe melhor divisão</li>
+    <li>Divide</li>
+    <li>Repete</li>
+  </ol>
+</section>
+
+<!-- SLIDE 11 -->
+<section>
+  <h2>Quando ela para?</h2>
+  <ul>
+    <li>Nó puro</li>
+    <li>Limite de profundidade</li>
+    <li>Poucos dados</li>
+  </ul>
+</section>
+
+<!-- SLIDE 12 -->
+<section>
+  <h2>Parâmetros</h2>
+  <ul>
+    <li><strong>criterion:</strong> gini ou entropy</li>
+    <li><strong>max_depth:</strong> profundidade</li>
+    <li><strong>min_samples_split:</strong> mínimo para dividir</li>
+    <li><strong>min_samples_leaf:</strong> mínimo na folha</li>
+  </ul>
+</section>
+
+<!-- SLIDE 13 -->
+<section>
+  <h2>Overfitting</h2>
+  <ul>
+    <li>Modelo decora os dados</li>
+    <li>Erra dados novos</li>
+  </ul>
+  <p>Solução: limitar a árvore</p>
+</section>
+
+<!-- SLIDE 14 -->
+<section>
+  <h2>Underfitting</h2>
+  <ul>
+    <li>Modelo muito simples</li>
+    <li>Não aprende direito</li>
+  </ul>
+</section>
+
+<!-- SLIDE 15 -->
+<section>
+  <h2>Comparação com KNN</h2>
+  <ul>
+    <li>KNN → usa distância</li>
+    <li>Decision Tree → cria regras</li>
+  </ul>
+</section>
+
+<!-- SLIDE 16 -->
+<section>
+  <h2>Por que usar?</h2>
+  <ul>
+    <li>Fácil de entender</li>
+    <li>Rápido</li>
+    <li>Interpretável</li>
+  </ul>
+</section>
+
+<!-- SLIDE 17 -->
+<section>
+  <h2>Resumo</h2>
+  <p>
+    A árvore aprende fazendo perguntas e dividindo os dados
+    até encontrar grupos cada vez mais organizados.
+  </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide'
+  });
+</script>
+
+</body>
+</html>
