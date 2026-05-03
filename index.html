@@ -9,8 +9,26 @@
 
   <style>
     h1, h2, h3 { color: #00d4ff; }
+
     p { font-size: 22px; }
     li { font-size: 20px; }
+
+    .highlight {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      border-radius: 12px;
+      margin: 12px 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .big {
+      font-size: 1.4em;
+    }
   </style>
 </head>
 
@@ -20,168 +38,184 @@
 
 <!-- SLIDE 1 -->
 <section>
-  <h1>Árvore de Decisão</h1>
-  <p>Como o modelo pensa e toma decisões</p>
+  <h1>🌳 Árvore de Decisão</h1>
+  <p class="highlight">Como o modelo pensa e toma decisões</p>
 </section>
 
 <!-- SLIDE 2 -->
 <section>
-  <h2>O que ela faz de verdade?</h2>
-  <ul>
-    <li>Divide os dados em grupos</li>
-    <li>Busca deixar os grupos mais puros</li>
-    <li>Continua até chegar em uma decisão</li>
-  </ul>
-  <p><strong>Ideia:</strong> separar dados parecidos</p>
+  <h2>🧠 O que ela faz?</h2>
+  <div class="card">
+    <ul>
+      <li>Divide os dados em grupos</li>
+      <li>Deixa os grupos mais <span class="highlight">puros</span></li>
+      <li>Continua até decidir</li>
+    </ul>
+  </div>
+  <p class="highlight">Separar dados parecidos</p>
 </section>
 
 <!-- SLIDE 3 -->
 <section>
-  <h2>Impureza</h2>
-  <ul>
-    <li>Puro → uma única classe</li>
-    <li>Impuro → mistura de classes</li>
-  </ul>
-  <p>Objetivo: diminuir a impureza</p>
+  <h2>📦 Impureza</h2>
+  <div class="card">
+    <p>Puro → uma única classe</p>
+    <p>Impuro → mistura de classes</p>
+  </div>
+  <p class="highlight">Objetivo: diminuir a impureza</p>
 </section>
 
 <!-- SLIDE 4 -->
 <section>
-  <h2>Exemplo</h2>
-  <pre>
-Grupo   Classe
-A       Cachorro
-B       Cachorro
-C       Gato
-  </pre>
-  <p>→ Grupo impuro</p>
+  <h2>🐶 Exemplo</h2>
+  <div class="card">
+    <pre>
+A → Cachorro
+B → Cachorro
+C → Gato
+    </pre>
+    <p class="highlight">Grupo impuro</p>
+  </div>
 </section>
 
 <!-- SLIDE 5 -->
 <section>
-  <h2>Como a árvore divide?</h2>
-  <ul>
-    <li>Idade > 18?</li>
-    <li>Altura < 1.70?</li>
-    <li>Tem pelos?</li>
-  </ul>
-  <p>→ Cada pergunta cria uma divisão</p>
+  <h2>✂️ Como divide?</h2>
+  <div class="card">
+    <ul>
+      <li>Idade > 18?</li>
+      <li>Altura < 1.70?</li>
+      <li>Tem pelos?</li>
+    </ul>
+  </div>
 </section>
 
 <!-- SLIDE 6 -->
 <section>
-  <h2>Como escolhe a melhor divisão?</h2>
-  <ol>
-    <li>Testa várias perguntas</li>
-    <li>Mede a impureza</li>
-    <li>Escolhe a melhor</li>
-  </ol>
+  <h2>🎯 Melhor divisão</h2>
+  <div class="card">
+    <ol>
+      <li>Testa perguntas</li>
+      <li>Mede impureza</li>
+      <li>Escolhe a melhor</li>
+    </ol>
+  </div>
 </section>
 
 <!-- SLIDE 7 -->
 <section>
-  <h2>Gini</h2>
-  <p>Gini = 1 - Σ p²</p>
-  <ul>
-    <li>0 = perfeito</li>
-    <li>0.5 = bagunçado</li>
-  </ul>
+  <h2>🧮 Gini</h2>
+  <div class="card">
+    <p>Gini = 1 - Σ p²</p>
+    <p>✔ 0 = perfeito</p>
+    <p>⚠ 0.5 = bagunçado</p>
+  </div>
 </section>
 
 <!-- SLIDE 8 -->
 <section>
-  <h2>Entropia</h2>
-  <p>Entropy = - Σ p log₂(p)</p>
-  <ul>
-    <li>0 = organizado</li>
-    <li>Alto = bagunça</li>
-  </ul>
+  <h2>🔥 Entropia</h2>
+  <div class="card">
+    <p>Entropy = - Σ p log₂(p)</p>
+    <p>✔ 0 = organizado</p>
+    <p>⚠ Alto = bagunça</p>
+  </div>
 </section>
 
 <!-- SLIDE 9 -->
 <section>
-  <h2>Ganho de Informação</h2>
-  <p>Quanto uma divisão melhora os dados</p>
-  <p>→ Escolhe a maior redução de impureza</p>
+  <h2>⚖️ Ganho de Informação</h2>
+  <div class="card">
+    <p>Quanto a divisão melhora os dados</p>
+    <p class="highlight">Escolhe a maior redução de impureza</p>
+  </div>
 </section>
 
 <!-- SLIDE 10 -->
 <section>
-  <h2>Como a árvore cresce</h2>
-  <ol>
-    <li>Começa com todos os dados</li>
-    <li>Escolhe melhor divisão</li>
-    <li>Divide</li>
-    <li>Repete</li>
-  </ol>
+  <h2>🌳 Crescimento</h2>
+  <div class="card">
+    <ol>
+      <li>Começa com todos os dados</li>
+      <li>Escolhe melhor divisão</li>
+      <li>Divide</li>
+      <li>Repete</li>
+    </ol>
+  </div>
 </section>
 
 <!-- SLIDE 11 -->
 <section>
-  <h2>Quando ela para?</h2>
-  <ul>
-    <li>Nó puro</li>
-    <li>Limite de profundidade</li>
-    <li>Poucos dados</li>
-  </ul>
+  <h2>🧠 Quando para?</h2>
+  <div class="card">
+    <ul>
+      <li>Nó puro</li>
+      <li>Limite de profundidade</li>
+      <li>Poucos dados</li>
+    </ul>
+  </div>
 </section>
 
 <!-- SLIDE 12 -->
 <section>
-  <h2>Parâmetros</h2>
-  <ul>
-    <li><strong>criterion:</strong> gini ou entropy</li>
-    <li><strong>max_depth:</strong> profundidade</li>
-    <li><strong>min_samples_split:</strong> mínimo para dividir</li>
-    <li><strong>min_samples_leaf:</strong> mínimo na folha</li>
-  </ul>
+  <h2>⚙️ Parâmetros</h2>
+  <div class="card">
+    <p><span class="highlight">criterion:</span> gini / entropy</p>
+    <p><span class="highlight">max_depth:</span> profundidade</p>
+    <p><span class="highlight">min_samples_split:</span> mínimo para dividir</p>
+    <p><span class="highlight">min_samples_leaf:</span> mínimo na folha</p>
+  </div>
 </section>
 
 <!-- SLIDE 13 -->
 <section>
-  <h2>Overfitting</h2>
-  <ul>
-    <li>Modelo decora os dados</li>
-    <li>Erra dados novos</li>
-  </ul>
-  <p>Solução: limitar a árvore</p>
+  <h2>⚠️ Overfitting</h2>
+  <div class="card">
+    <p>Modelo decora os dados</p>
+    <p>Erra dados novos</p>
+  </div>
+  <p class="highlight">Solução: limitar a árvore</p>
 </section>
 
 <!-- SLIDE 14 -->
 <section>
-  <h2>Underfitting</h2>
-  <ul>
-    <li>Modelo muito simples</li>
-    <li>Não aprende direito</li>
-  </ul>
+  <h2>📉 Underfitting</h2>
+  <div class="card">
+    <p>Modelo simples demais</p>
+    <p>Não aprende direito</p>
+  </div>
 </section>
 
 <!-- SLIDE 15 -->
 <section>
-  <h2>Comparação com KNN</h2>
-  <ul>
-    <li>KNN → usa distância</li>
-    <li>Decision Tree → cria regras</li>
-  </ul>
+  <h2>📊 KNN vs Decision Tree</h2>
+  <div class="card">
+    <p>KNN → usa distância</p>
+    <p>Decision Tree → cria regras</p>
+  </div>
 </section>
 
 <!-- SLIDE 16 -->
 <section>
-  <h2>Por que usar?</h2>
-  <ul>
-    <li>Fácil de entender</li>
-    <li>Rápido</li>
-    <li>Interpretável</li>
-  </ul>
+  <h2>🚀 Por que usar?</h2>
+  <div class="card">
+    <ul>
+      <li>Fácil de entender</li>
+      <li>Rápido</li>
+      <li>Interpretável</li>
+    </ul>
+  </div>
 </section>
 
 <!-- SLIDE 17 -->
 <section>
-  <h2>Resumo</h2>
-  <p>
-    A árvore aprende fazendo perguntas e dividindo os dados
-    até encontrar grupos cada vez mais organizados.
-  </p>
+  <h2>🎤 Resumo</h2>
+  <div class="card">
+    <p>
+      A árvore aprende fazendo perguntas e dividindo os dados
+      até deixá-los organizados.
+    </p>
+  </div>
 </section>
 
 </div>
@@ -191,7 +225,8 @@ C       Gato
 <script>
   Reveal.initialize({
     hash: true,
-    transition: 'slide'
+    transition: 'slide',
+    slideNumber: true
   });
 </script>
 
