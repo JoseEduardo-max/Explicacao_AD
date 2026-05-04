@@ -1,309 +1,355 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <title>Decision Tree</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="styles.css">
 
-  <style>
-    h1, h2, h3 { color: #00d4ff; }
-
-    p { font-size: 22px; }
-    li { font-size: 20px; }
-
-    .highlight {
-      color: #00ffcc;
-      font-weight: bold;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      padding: 15px;
-      border-radius: 12px;
-      margin: 12px 0;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    .big {
-      font-size: 1.4em;
-    }
-  </style>
 </head>
 
 <body>
-<div class="reveal">
-<div class="slides">
+  <div class="reveal">
+    <div class="slides">
 
-<!-- SLIDE 1 -->
-<section>
-  <h1>🌳 Árvore de Decisão</h1>
-  <p class="highlight">Como o modelo pensa e toma decisões</p>
+      <!-- SLIDE 1 -->
+      <section>
+        <h1>🌳 Árvore de Decisão</h1>
+        <p class="highlight">Como o modelo pensa e toma decisões</p>
 
-  <aside class="notes">
-    Imagina que você precisa tomar decisões fazendo perguntas.
-    É exatamente assim que a árvore funciona.
-  </aside>
-</section>
+        <aside class="notes">
+          Imagina que você precisa tomar decisões fazendo perguntas.
+          É exatamente assim que a árvore funciona.
+        </aside>
+      </section>
 
-<!-- SLIDE 2 -->
-<section>
-  <h2>🧠 O que ela faz?</h2>
-  <div class="card">
-    <ul>
-      <li>Divide os dados em grupos</li>
-      <li>Deixa os grupos mais <span class="highlight">puros</span></li>
-      <li>Continua até decidir</li>
-    </ul>
-  </div>
-  <p class="highlight">Separar dados parecidos</p>
+      <!-- SLIDE 2 -->
+      <section>
+        <h2>🧠 O que ela faz?</h2>
+        <div class="card">
+          <ul>
+            <li>Divide os dados em grupos</li>
+            <li>Deixa os grupos mais <span class="highlight">puros</span></li>
+            <li>Continua até decidir</li>
+          </ul>
+        </div>
+        <p class="highlight">Separar dados parecidos</p>
 
-  <aside class="notes">
-    Ela vai separando os dados até que cada grupo fique o mais parecido possível.
-  </aside>
-</section>
+        <aside class="notes">
+          Ela vai separando os dados até que cada grupo fique o mais parecido possível.
+        </aside>
+      </section>
 
-<!-- SLIDE 3 -->
-<section>
-  <h2>📦 Impureza</h2>
-  <div class="card">
-    <p>Puro → uma única classe</p>
-    <p>Impuro → mistura de classes</p>
-  </div>
-  <p class="highlight">Objetivo: diminuir a impureza</p>
+      <!-- SLIDE 3 -->
+      <section>
+        <h2>📦 Impureza</h2>
+        <div class="card">
+          <p>Puro → uma única classe</p>
+          <p>Impuro → mistura de classes</p>
+        </div>
+        <p class="highlight">Objetivo: diminuir a impureza</p>
 
-  <aside class="notes">
-    A árvore sempre tenta transformar um grupo bagunçado em grupos organizados.
-  </aside>
-</section>
+        <aside class="notes">
+          A árvore sempre tenta transformar um grupo bagunçado em grupos organizados.
+        </aside>
+      </section>
 
-<!-- SLIDE 4 -->
-<section>
-  <h2>🐶 Exemplo</h2>
-  <div class="card">
-    <pre>
+      <!-- SLIDE 4 -->
+      <section>
+        <h2>🐶 Exemplo</h2>
+        <div class="card">
+          <pre>
 A → Cachorro
 B → Cachorro
 C → Gato
     </pre>
-    <p class="highlight">Grupo impuro</p>
+          <p class="highlight">Grupo impuro</p>
+        </div>
+
+        <aside class="notes">
+          Aqui temos um grupo misturado.
+          E a árvore não gosta disso — ela quer separar.
+        </aside>
+      </section>
+
+      <!-- SLIDE 5 -->
+      <section>
+        <h2>✂️ Como divide?</h2>
+        <div class="card">
+          <ul>
+            <li>Idade > 18?</li>
+            <li>Altura < 1.70?</li>
+            <li>Tem pelos?</li>
+          </ul>
+        </div>
+
+        <div class="image-row">
+          <img src="img/decisãoAnimal.png" onclick="openModal('img1')">
+          <img src="img/divisãoEspaço.png" onclick="openModal('img2')">
+        </div>
+
+        <aside class="notes">
+          Cada pergunta é como um corte nos dados.
+          Ela transforma um problema complexo em várias decisões simples.
+        </aside>
+      </section>
+
+      <!-- SLIDE 6 -->
+      <section>
+        <h2>🎯 Melhor divisão</h2>
+        <div class="card">
+          <ol>
+            <li>Testa perguntas</li>
+            <li>Mede impureza</li>
+            <li>Escolhe a melhor</li>
+          </ol>
+        </div>
+
+        <aside class="notes">
+          A árvore testa várias possibilidades e escolhe a que melhor organiza os dados.
+        </aside>
+      </section>
+
+      <!-- SLIDE 7 -->
+      <section>
+        <h2>🧮 Gini</h2>
+        <div class="card">
+          <p>Gini = 1 - Σ p²</p>
+          <p>✔ 0 = perfeito</p>
+          <p>⚠ 0.5 = bagunçado</p>
+        </div>
+
+        <aside class="notes">
+          O Gini mede o quão bagunçado está um grupo.
+          Se só tiver uma classe, o Gini é zero — perfeito.
+        </aside>
+      </section>
+
+      <!-- SLIDE 8 -->
+      <section>
+        <h2>🔥 Entropia</h2>
+        <div class="card">
+          <p>Entropy = - Σ p log₂(p)</p>
+          <p>✔ 0 = organizado</p>
+          <p>⚠ Alto = bagunça</p>
+        </div>
+
+        <aside class="notes">
+          A entropia mede o nível de desordem dos dados.
+          Quanto mais bagunça, maior a entropia.
+        </aside>
+      </section>
+
+      <section>
+        <div class="image-row">
+          <img src="img/giniEntropia.png" onclick="openModal('img3')">
+        </div>
+      </section>
+
+      <!-- SLIDE 9 -->
+      <section>
+        <h2>⚖️ Ganho de Informação</h2>
+        <div class="card">
+          <p>Quanto a divisão melhora os dados</p>
+          <p class="highlight">Escolhe a maior redução de impureza</p>
+        </div>
+
+        <aside class="notes">
+          O modelo escolhe a divisão que mais reduz a bagunça.
+          Ou seja, a pergunta que mais organiza os dados.
+        </aside>
+      </section>
+
+      <!-- SLIDE 10 -->
+      <section>
+        <h2>🌳 Crescimento</h2>
+        <div class="card">
+          <ol>
+            <li>Começa com todos os dados</li>
+            <li>Escolhe melhor divisão</li>
+            <li>Divide</li>
+            <li>Repete</li>
+          </ol>
+        </div>
+
+        <aside class="notes">
+          A árvore cresce repetindo esse processo várias vezes.
+        </aside>
+      </section>
+
+      <!-- SLIDE 11 -->
+      <section>
+        <h2>🧠 Quando para?</h2>
+        <div class="card">
+          <ul>
+            <li>Nó puro</li>
+            <li>Limite de profundidade</li>
+            <li>Poucos dados</li>
+          </ul>
+        </div>
+
+        <aside class="notes">
+          Se não parar, a árvore fica complexa demais.
+        </aside>
+      </section>
+
+      <!-- SLIDE 12 -->
+      <section>
+        <h2>⚙️ Parâmetros</h2>
+        <div class="card">
+          <p><span class="highlight">criterion:</span> gini / entropy</p>
+          <p><span class="highlight">max_depth:</span> profundidade</p>
+          <p><span class="highlight">min_samples_split:</span> mínimo para dividir</p>
+          <p><span class="highlight">min_samples_leaf:</span> mínimo na folha</p>
+        </div>
+
+        <aside class="notes">
+          Esses parâmetros ajudam a controlar o comportamento da árvore.
+        </aside>
+      </section>
+
+      <!-- SLIDE 13 -->
+      <section>
+        <h2>⚠️ Overfitting</h2>
+        <div class="card">
+          <p>Modelo decora os dados</p>
+          <p>Erra dados novos</p>
+        </div>
+        <p class="highlight">Solução: limitar a árvore</p>
+
+        <div class="image-row">
+          <img src="img/overUnder.png" onclick="openModal('img4')">
+        </div>
+
+        <aside class="notes">
+          Aqui o modelo aprende até o erro dos dados.
+          Ele para de generalizar.
+        </aside>
+      </section>
+
+      <!-- SLIDE 14 -->
+      <section>
+        <h2>📉 Underfitting</h2>
+        <div class="card">
+          <p>Modelo simples demais</p>
+          <p>Não aprende direito</p>
+        </div>
+
+        <aside class="notes">
+          Aqui o modelo nem tenta aprender direito.
+        </aside>
+      </section>
+
+      <!-- SLIDE 15 -->
+      <section>
+        <h2>📊 KNN vs Decision Tree</h2>
+        <div class="card">
+          <p>KNN → usa distância</p>
+          <p>Decision Tree → cria regras</p>
+        </div>
+
+        <div class="image-row">
+          <img src="img/comparação.png" onclick="openModal('img5')">
+        </div>
+
+        <aside class="notes">
+          Enquanto o KNN compara proximidade, a árvore cria lógica.
+        </aside>
+      </section>
+
+      <!-- SLIDE 16 -->
+      <section>
+        <h2>🚀 Por que usar?</h2>
+        <div class="card">
+          <ul>
+            <li>Fácil de entender</li>
+            <li>Rápido</li>
+            <li>Interpretável</li>
+          </ul>
+        </div>
+
+        <aside class="notes">
+          É um dos modelos mais fáceis de entender e explicar.
+        </aside>
+      </section>
+
+      <!-- SLIDE 17 -->
+      <section>
+        <h2>🎤 Resumo</h2>
+        <div class="card">
+          <p>
+            A árvore aprende fazendo perguntas e dividindo os dados
+            até deixá-los organizados.
+          </p>
+        </div>
+
+        <aside class="notes">
+          A árvore aprende fazendo perguntas até encontrar a melhor decisão.
+        </aside>
+      </section>
+
+    </div>
   </div>
 
-  <aside class="notes">
-    Aqui temos um grupo misturado.
-    E a árvore não gosta disso — ela quer separar.
-  </aside>
-</section>
-
-<!-- SLIDE 5 -->
-<section>
-  <h2>✂️ Como divide?</h2>
-  <div class="card">
-    <ul>
-      <li>Idade > 18?</li>
-      <li>Altura < 1.70?</li>
-      <li>Tem pelos?</li>
-    </ul>
+  <!-- MODAIS -->
+  <div id="img1" class="modal" onclick="closeModal(event)">
+    <img src="img/decisãoAnimal.png">
   </div>
 
-  <aside class="notes">
-    Cada pergunta é como um corte nos dados.
-    Ela transforma um problema complexo em várias decisões simples.
-  </aside>
-</section>
-
-<!-- SLIDE 6 -->
-<section>
-  <h2>🎯 Melhor divisão</h2>
-  <div class="card">
-    <ol>
-      <li>Testa perguntas</li>
-      <li>Mede impureza</li>
-      <li>Escolhe a melhor</li>
-    </ol>
+  <div id="img2" class="modal" onclick="closeModal(event)">
+    <img src="img/divisãoEspaço.png">
   </div>
 
-  <aside class="notes">
-    A árvore testa várias possibilidades e escolhe a que melhor organiza os dados.
-  </aside>
-</section>
-
-<!-- SLIDE 7 -->
-<section>
-  <h2>🧮 Gini</h2>
-  <div class="card">
-    <p>Gini = 1 - Σ p²</p>
-    <p>✔ 0 = perfeito</p>
-    <p>⚠ 0.5 = bagunçado</p>
+  <div id="img3" class="modal" onclick="closeModal(event)">
+    <img src="img/giniEntropia.png">
   </div>
 
-  <aside class="notes">
-    O Gini mede o quão bagunçado está um grupo.
-    Se só tiver uma classe, o Gini é zero — perfeito.
-  </aside>
-</section>
-
-<!-- SLIDE 8 -->
-<section>
-  <h2>🔥 Entropia</h2>
-  <div class="card">
-    <p>Entropy = - Σ p log₂(p)</p>
-    <p>✔ 0 = organizado</p>
-    <p>⚠ Alto = bagunça</p>
+  <div id="img4" class="modal" onclick="closeModal(event)">
+    <img src="img/overUnder.png">
   </div>
 
-  <aside class="notes">
-    A entropia mede o nível de desordem dos dados.
-    Quanto mais bagunça, maior a entropia.
-  </aside>
-</section>
-
-<!-- SLIDE 9 -->
-<section>
-  <h2>⚖️ Ganho de Informação</h2>
-  <div class="card">
-    <p>Quanto a divisão melhora os dados</p>
-    <p class="highlight">Escolhe a maior redução de impureza</p>
+  <div id="img5" class="modal" onclick="closeModal(event)">
+    <img src="img/comparação.png">
   </div>
 
-  <aside class="notes">
-    O modelo escolhe a divisão que mais reduz a bagunça.
-    Ou seja, a pergunta que mais organiza os dados.
-  </aside>
-</section>
 
-<!-- SLIDE 10 -->
-<section>
-  <h2>🌳 Crescimento</h2>
-  <div class="card">
-    <ol>
-      <li>Começa com todos os dados</li>
-      <li>Escolhe melhor divisão</li>
-      <li>Divide</li>
-      <li>Repete</li>
-    </ol>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      slideNumber: true
+    });
+  </script>
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.add("active");
 
-  <aside class="notes">
-    A árvore cresce repetindo esse processo várias vezes.
-  </aside>
-</section>
+      // PAUSA o Reveal (evita bug de navegação)
+      Reveal.configure({ keyboard: false });
+    }
 
-<!-- SLIDE 11 -->
-<section>
-  <h2>🧠 Quando para?</h2>
-  <div class="card">
-    <ul>
-      <li>Nó puro</li>
-      <li>Limite de profundidade</li>
-      <li>Poucos dados</li>
-    </ul>
-  </div>
+    function closeModal(event) {
+      if (event.target.classList.contains("modal")) {
+        event.target.classList.remove("active");
 
-  <aside class="notes">
-    Se não parar, a árvore fica complexa demais.
-  </aside>
-</section>
+        // REATIVA o Reveal
+        Reveal.configure({ keyboard: true });
+      }
+    }
 
-<!-- SLIDE 12 -->
-<section>
-  <h2>⚙️ Parâmetros</h2>
-  <div class="card">
-    <p><span class="highlight">criterion:</span> gini / entropy</p>
-    <p><span class="highlight">max_depth:</span> profundidade</p>
-    <p><span class="highlight">min_samples_split:</span> mínimo para dividir</p>
-    <p><span class="highlight">min_samples_leaf:</span> mínimo na folha</p>
-  </div>
-
-  <aside class="notes">
-    Esses parâmetros ajudam a controlar o comportamento da árvore.
-  </aside>
-</section>
-
-<!-- SLIDE 13 -->
-<section>
-  <h2>⚠️ Overfitting</h2>
-  <div class="card">
-    <p>Modelo decora os dados</p>
-    <p>Erra dados novos</p>
-  </div>
-  <p class="highlight">Solução: limitar a árvore</p>
-
-  <aside class="notes">
-    Aqui o modelo aprende até o erro dos dados.
-    Ele para de generalizar.
-  </aside>
-</section>
-
-<!-- SLIDE 14 -->
-<section>
-  <h2>📉 Underfitting</h2>
-  <div class="card">
-    <p>Modelo simples demais</p>
-    <p>Não aprende direito</p>
-  </div>
-
-  <aside class="notes">
-    Aqui o modelo nem tenta aprender direito.
-  </aside>
-</section>
-
-<!-- SLIDE 15 -->
-<section>
-  <h2>📊 KNN vs Decision Tree</h2>
-  <div class="card">
-    <p>KNN → usa distância</p>
-    <p>Decision Tree → cria regras</p>
-  </div>
-
-  <aside class="notes">
-    Enquanto o KNN compara proximidade, a árvore cria lógica.
-  </aside>
-</section>
-
-<!-- SLIDE 16 -->
-<section>
-  <h2>🚀 Por que usar?</h2>
-  <div class="card">
-    <ul>
-      <li>Fácil de entender</li>
-      <li>Rápido</li>
-      <li>Interpretável</li>
-    </ul>
-  </div>
-
-  <aside class="notes">
-    É um dos modelos mais fáceis de entender e explicar.
-  </aside>
-</section>
-
-<!-- SLIDE 17 -->
-<section>
-  <h2>🎤 Resumo</h2>
-  <div class="card">
-    <p>
-      A árvore aprende fazendo perguntas e dividindo os dados
-      até deixá-los organizados.
-    </p>
-  </div>
-
-  <aside class="notes">
-    A árvore aprende fazendo perguntas até encontrar a melhor decisão.
-  </aside>
-</section>
-
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-<script>
-  Reveal.initialize({
-    hash: true,
-    transition: 'slide',
-    slideNumber: true
-  });
-</script>
-
+    // FECHAR COM ESC
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        document.querySelectorAll(".modal").forEach(m => m.classList.remove("active"));
+        Reveal.configure({ keyboard: true });
+      }
+    });
+  </script>
 </body>
+
 </html>
