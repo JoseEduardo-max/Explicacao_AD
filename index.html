@@ -40,6 +40,11 @@
 <section>
   <h1>🌳 Árvore de Decisão</h1>
   <p class="highlight">Como o modelo pensa e toma decisões</p>
+
+  <aside class="notes">
+    Imagina que você precisa tomar decisões fazendo perguntas.
+    É exatamente assim que a árvore funciona.
+  </aside>
 </section>
 
 <!-- SLIDE 2 -->
@@ -53,6 +58,10 @@
     </ul>
   </div>
   <p class="highlight">Separar dados parecidos</p>
+
+  <aside class="notes">
+    Ela vai separando os dados até que cada grupo fique o mais parecido possível.
+  </aside>
 </section>
 
 <!-- SLIDE 3 -->
@@ -63,6 +72,10 @@
     <p>Impuro → mistura de classes</p>
   </div>
   <p class="highlight">Objetivo: diminuir a impureza</p>
+
+  <aside class="notes">
+    A árvore sempre tenta transformar um grupo bagunçado em grupos organizados.
+  </aside>
 </section>
 
 <!-- SLIDE 4 -->
@@ -76,6 +89,11 @@ C → Gato
     </pre>
     <p class="highlight">Grupo impuro</p>
   </div>
+
+  <aside class="notes">
+    Aqui temos um grupo misturado.
+    E a árvore não gosta disso — ela quer separar.
+  </aside>
 </section>
 
 <!-- SLIDE 5 -->
@@ -88,6 +106,11 @@ C → Gato
       <li>Tem pelos?</li>
     </ul>
   </div>
+
+  <aside class="notes">
+    Cada pergunta é como um corte nos dados.
+    Ela transforma um problema complexo em várias decisões simples.
+  </aside>
 </section>
 
 <!-- SLIDE 6 -->
@@ -100,6 +123,10 @@ C → Gato
       <li>Escolhe a melhor</li>
     </ol>
   </div>
+
+  <aside class="notes">
+    A árvore testa várias possibilidades e escolhe a que melhor organiza os dados.
+  </aside>
 </section>
 
 <!-- SLIDE 7 -->
@@ -110,6 +137,11 @@ C → Gato
     <p>✔ 0 = perfeito</p>
     <p>⚠ 0.5 = bagunçado</p>
   </div>
+
+  <aside class="notes">
+    O Gini mede o quão bagunçado está um grupo.
+    Se só tiver uma classe, o Gini é zero — perfeito.
+  </aside>
 </section>
 
 <!-- SLIDE 8 -->
@@ -120,6 +152,11 @@ C → Gato
     <p>✔ 0 = organizado</p>
     <p>⚠ Alto = bagunça</p>
   </div>
+
+  <aside class="notes">
+    A entropia mede o nível de desordem dos dados.
+    Quanto mais bagunça, maior a entropia.
+  </aside>
 </section>
 
 <!-- SLIDE 9 -->
@@ -129,6 +166,11 @@ C → Gato
     <p>Quanto a divisão melhora os dados</p>
     <p class="highlight">Escolhe a maior redução de impureza</p>
   </div>
+
+  <aside class="notes">
+    O modelo escolhe a divisão que mais reduz a bagunça.
+    Ou seja, a pergunta que mais organiza os dados.
+  </aside>
 </section>
 
 <!-- SLIDE 10 -->
@@ -142,6 +184,10 @@ C → Gato
       <li>Repete</li>
     </ol>
   </div>
+
+  <aside class="notes">
+    A árvore cresce repetindo esse processo várias vezes.
+  </aside>
 </section>
 
 <!-- SLIDE 11 -->
@@ -154,6 +200,10 @@ C → Gato
       <li>Poucos dados</li>
     </ul>
   </div>
+
+  <aside class="notes">
+    Se não parar, a árvore fica complexa demais.
+  </aside>
 </section>
 
 <!-- SLIDE 12 -->
@@ -165,6 +215,10 @@ C → Gato
     <p><span class="highlight">min_samples_split:</span> mínimo para dividir</p>
     <p><span class="highlight">min_samples_leaf:</span> mínimo na folha</p>
   </div>
+
+  <aside class="notes">
+    Esses parâmetros ajudam a controlar o comportamento da árvore.
+  </aside>
 </section>
 
 <!-- SLIDE 13 -->
@@ -175,6 +229,11 @@ C → Gato
     <p>Erra dados novos</p>
   </div>
   <p class="highlight">Solução: limitar a árvore</p>
+
+  <aside class="notes">
+    Aqui o modelo aprende até o erro dos dados.
+    Ele para de generalizar.
+  </aside>
 </section>
 
 <!-- SLIDE 14 -->
@@ -184,6 +243,10 @@ C → Gato
     <p>Modelo simples demais</p>
     <p>Não aprende direito</p>
   </div>
+
+  <aside class="notes">
+    Aqui o modelo nem tenta aprender direito.
+  </aside>
 </section>
 
 <!-- SLIDE 15 -->
@@ -193,6 +256,10 @@ C → Gato
     <p>KNN → usa distância</p>
     <p>Decision Tree → cria regras</p>
   </div>
+
+  <aside class="notes">
+    Enquanto o KNN compara proximidade, a árvore cria lógica.
+  </aside>
 </section>
 
 <!-- SLIDE 16 -->
@@ -205,6 +272,10 @@ C → Gato
       <li>Interpretável</li>
     </ul>
   </div>
+
+  <aside class="notes">
+    É um dos modelos mais fáceis de entender e explicar.
+  </aside>
 </section>
 
 <!-- SLIDE 17 -->
@@ -216,6 +287,10 @@ C → Gato
       até deixá-los organizados.
     </p>
   </div>
+
+  <aside class="notes">
+    A árvore aprende fazendo perguntas até encontrar a melhor decisão.
+  </aside>
 </section>
 
 </div>
