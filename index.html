@@ -21,8 +21,9 @@
         <p class="highlight">Como o modelo pensa e toma decisões</p>
 
         <aside class="notes">
-          Imagina que você precisa tomar decisões fazendo perguntas.
-          É exatamente assim que a árvore funciona.
+          “Bom, hoje eu vou explicar como funciona a árvore de decisão, que é um modelo de machine learning que aprende
+          a tomar decisões fazendo perguntas.”
+          “Basicamente, ela pensa de forma parecida com a gente: fazendo perguntas simples até chegar numa conclusão.”
         </aside>
       </section>
 
@@ -39,7 +40,9 @@
         <p class="highlight">Separar dados parecidos</p>
 
         <aside class="notes">
-          Ela vai separando os dados até que cada grupo fique o mais parecido possível.
+          “A árvore pega um conjunto de dados e começa a dividir em grupos menores.”
+          “O objetivo dela é deixar esses grupos o mais organizados possível, ou seja, com dados parecidos entre si.”
+          “No final, ela consegue separar e classificar os dados corretamente.”
         </aside>
       </section>
 
@@ -53,7 +56,10 @@
         <p class="highlight">Objetivo: diminuir a impureza</p>
 
         <aside class="notes">
-          A árvore sempre tenta transformar um grupo bagunçado em grupos organizados.
+          “Aqui entra o conceito de impureza.”
+          “Um grupo puro é quando todos os dados são da mesma classe.”
+          “Um grupo impuro é quando tem mistura.”
+          “A árvore sempre tenta diminuir essa impureza.”
         </aside>
       </section>
 
@@ -70,8 +76,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Aqui temos um grupo misturado.
-          E a árvore não gosta disso — ela quer separar.
+          “Por exemplo, aqui temos dois cachorros e um gato.”
+          “Isso é um grupo impuro.”
+          “A árvore vai tentar separar isso, criando perguntas que dividam melhor esses dados.”
         </aside>
       </section>
 
@@ -92,8 +99,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Cada pergunta é como um corte nos dados.
-          Ela transforma um problema complexo em várias decisões simples.
+          “A árvore faz perguntas como: idade, altura ou alguma característica.”
+          “Cada pergunta cria uma divisão.”
+          “É como se ela estivesse cortando os dados em partes menores.”
         </aside>
       </section>
 
@@ -109,7 +117,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          A árvore testa várias possibilidades e escolhe a que melhor organiza os dados.
+          “Mas ela não escolhe qualquer pergunta.”
+          “Ela testa várias possibilidades, mede qual deixa os dados mais organizados…”
+          “E escolhe a melhor divisão.”
         </aside>
       </section>
 
@@ -123,8 +133,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          O Gini mede o quão bagunçado está um grupo.
-          Se só tiver uma classe, o Gini é zero — perfeito.
+          “O Gini é uma forma de medir a bagunça dos dados.”
+          “Se for zero, está perfeito — só tem uma classe.”
+          “Quanto maior, mais misturado está.”
         </aside>
       </section>
 
@@ -138,8 +149,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          A entropia mede o nível de desordem dos dados.
-          Quanto mais bagunça, maior a entropia.
+          “A entropia é parecida com o Gini, também mede desorganização.”
+          “Quanto maior o valor, mais bagunça.”
+          “Quanto menor, mais organizado.”
         </aside>
       </section>
 
@@ -158,8 +170,8 @@ C → Gato
         </div>
 
         <aside class="notes">
-          O modelo escolhe a divisão que mais reduz a bagunça.
-          Ou seja, a pergunta que mais organiza os dados.
+          “O ganho de informação mede o quanto uma divisão melhora os dados.”
+          “A árvore sempre escolhe a divisão que mais reduz a bagunça.”
         </aside>
       </section>
 
@@ -176,7 +188,10 @@ C → Gato
         </div>
 
         <aside class="notes">
-          A árvore cresce repetindo esse processo várias vezes.
+          “A árvore começa com todos os dados.”
+          “Depois divide…”
+          “Depois divide de novo…”
+          “E continua até organizar tudo.”
         </aside>
       </section>
 
@@ -192,7 +207,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Se não parar, a árvore fica complexa demais.
+          “Ela para quando os dados já estão organizados…”
+          “Ou quando chega em um limite…”
+          “Ou quando não faz mais sentido dividir.”
         </aside>
       </section>
 
@@ -207,7 +224,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Esses parâmetros ajudam a controlar o comportamento da árvore.
+          “Aqui temos os parâmetros que controlam a árvore.”
+          “Por exemplo, profundidade, quantidade mínima de dados…”
+          “Esses parâmetros ajudam a evitar erros no modelo.”
         </aside>
       </section>
 
@@ -225,8 +244,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Aqui o modelo aprende até o erro dos dados.
-          Ele para de generalizar.
+          “Aqui temos o overfitting.”
+          “É quando o modelo aprende até demais, até os erros dos dados.”
+          “Ele funciona bem no treino, mas erra quando aparecem dados novos.”
         </aside>
       </section>
 
@@ -239,7 +259,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Aqui o modelo nem tenta aprender direito.
+          “Já o underfitting é o contrário.”
+          “O modelo é simples demais…”
+          “E não consegue aprender direito.”
         </aside>
       </section>
 
@@ -256,7 +278,10 @@ C → Gato
         </div>
 
         <aside class="notes">
-          Enquanto o KNN compara proximidade, a árvore cria lógica.
+          “O KNN funciona baseado em distância.”
+          “Já a árvore de decisão funciona criando regras.”
+          “Ou seja, um usa matemática de proximidade…”
+          “E o outro usa lógica.”
         </aside>
       </section>
 
@@ -272,7 +297,9 @@ C → Gato
         </div>
 
         <aside class="notes">
-          É um dos modelos mais fáceis de entender e explicar.
+          “A árvore de decisão é muito usada porque é fácil de entender.”
+          “Ela é rápida…”
+          “E principalmente: dá pra explicar o que ela está fazendo.”
         </aside>
       </section>
 
@@ -287,7 +314,10 @@ C → Gato
         </div>
 
         <aside class="notes">
-          A árvore aprende fazendo perguntas até encontrar a melhor decisão.
+          “Resumindo…”
+          “A árvore aprende fazendo perguntas…”
+          “E vai dividindo os dados…”
+          “Até deixar tudo organizado e chegar numa decisão.”
         </aside>
       </section>
 
