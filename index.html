@@ -39,6 +39,10 @@
         </div>
         <p class="highlight">Separar dados parecidos</p>
 
+        <div class="image-row">
+          <img src="img/1.png" onclick="openModal('img6')">
+        </div>
+
         <aside class="notes">
           “A árvore pega um conjunto de dados e começa a dividir em grupos menores.”
           “O objetivo dela é deixar esses grupos o mais organizados possível, ou seja, com dados parecidos entre si.”
@@ -54,6 +58,9 @@
           <p>Impuro → mistura de classes</p>
         </div>
         <p class="highlight">Objetivo: diminuir a impureza</p>
+        <div class="image-row">
+          <img src="img/2.png" onclick="openModal('img7')">
+        </div>
 
         <aside class="notes">
           “Aqui entra o conceito de impureza.”
@@ -65,134 +72,101 @@
 
       <!-- SLIDE 4 -->
       <section>
-        <h2>🐶 Exemplo</h2>
+        <h2>🔍 Perguntas</h2>
         <div class="card">
-          <pre>
-A → Cachorro
-B → Cachorro
-C → Gato
-    </pre>
-          <p class="highlight">Grupo impuro</p>
+          <p>Árvore faz perguntas para dividir os dados</p>
+          <div class="image-row">
+            <img src="img/3.png" onclick="openModal('img8')">
+          </div>
         </div>
 
         <aside class="notes">
-          “Por exemplo, aqui temos dois cachorros e um gato.”
-          “Isso é um grupo impuro.”
-          “A árvore vai tentar separar isso, criando perguntas que dividam melhor esses dados.”
+          “A árvore de decisão funciona fazendo perguntas sobre os dados.”
+          “Por exemplo, ela pode perguntar: a idade é maior que 18?”
+          “Dependendo da resposta, ela divide os dados em grupos diferentes.”
         </aside>
       </section>
 
       <!-- SLIDE 5 -->
       <section>
-        <h2>✂️ Como divide?</h2>
+        <h2>Pureza</h2>
         <div class="card">
-          <ul>
-            <li>Idade > 18?</li>
-            <li>Altura < 1.70?</li>
-            <li>Tem pelos?</li>
-          </ul>
+          <p>Árvore testa várias perguntas</p>
+          <p>Escolhe a que deixa os dados mais puros</p>
         </div>
-
         <div class="image-row">
-          <img src="img/decisãoAnimal.png" onclick="openModal('img1')">
-          <img src="img/divisãoEspaço.png" onclick="openModal('img2')">
+          <img src="img/4.png" onclick="openModal('img9')">
         </div>
 
         <aside class="notes">
-          “A árvore faz perguntas como: idade, altura ou alguma característica.”
-          “Cada pergunta cria uma divisão.”
-          “É como se ela estivesse cortando os dados em partes menores.”
-        </aside>
+          “Mas a árvore não escolhe qualquer pergunta.”
+          “Ela testa várias possibilidades, mede qual deixa os dados mais organizados…”
+          “E escolhe a melhor divisão.”
       </section>
 
       <!-- SLIDE 6 -->
       <section>
-        <h2>🎯 Melhor divisão</h2>
-        <div class="card">
-          <ol>
-            <li>Testa perguntas</li>
-            <li>Mede impureza</li>
-            <li>Escolhe a melhor</li>
-          </ol>
+        <h2>Exemplo Gini</h2>
+        <div class="image-row">
+          <img src="img/5.png" onclick="openModal('img10')">
         </div>
 
         <aside class="notes">
-          “Mas ela não escolhe qualquer pergunta.”
-          “Ela testa várias possibilidades, mede qual deixa os dados mais organizados…”
-          “E escolhe a melhor divisão.”
-        </aside>
+          “Aqui temos um exemplo de como o Gini mede a impureza.”
+          “Quanto mais misturado, maior o valor do Gini.”
+          “Quanto mais puro, menor o valor.”
       </section>
 
       <!-- SLIDE 7 -->
       <section>
-        <h2>🧮 Gini</h2>
-        <div class="card">
-          <p>Gini = 1 - Σ p²</p>
-          <p>✔ 0 = perfeito</p>
-          <p>⚠ 0.5 = bagunçado</p>
+        <h2>Testando Perguntas</h2>
+        <div class="image-row">
+          <img src="img/6.png" onclick="openModal('img11')">
         </div>
 
         <aside class="notes">
-          “O Gini é uma forma de medir a bagunça dos dados.”
-          “Se for zero, está perfeito — só tem uma classe.”
-          “Quanto maior, mais misturado está.”
-        </aside>
+          “Aqui temos um exemplo de como a árvore testa diferentes perguntas.”
+          “Ela calcula o Gini para cada divisão possível…”
+          “E escolhe a que tem o menor valor, ou seja, a mais pura.”
       </section>
 
       <!-- SLIDE 8 -->
       <section>
-        <h2>🔥 Entropia</h2>
-        <div class="card">
-          <p>Entropy = - Σ p log₂(p)</p>
-          <p>✔ 0 = organizado</p>
-          <p>⚠ Alto = bagunça</p>
+        <h2>Comparação com uma pergunta ruim</h2>
+        <div class="image-row">
+          <img src="img/7.png" onclick="openModal('img12')">
         </div>
-
-        <aside class="notes">
-          “A entropia é parecida com o Gini, também mede desorganização.”
-          “Quanto maior o valor, mais bagunça.”
-          “Quanto menor, mais organizado.”
-        </aside>
       </section>
 
       <section>
+        <h2>Como escolhe a melhor pergunta</h2>
+        <div class="card">
+          <p>Calcula o ganho de informação</p>
+          <p>Escolhe a pergunta com maior ganho</p>
+        </div>
         <div class="image-row">
-          <img src="img/giniEntropia.png" onclick="openModal('img3')">
+          <img src="img/8.png" onclick="openModal('img13')">
         </div>
       </section>
 
       <!-- SLIDE 9 -->
       <section>
-        <h2>⚖️ Ganho de Informação</h2>
-        <div class="card">
-          <p>Quanto a divisão melhora os dados</p>
-          <p class="highlight">Escolhe a maior redução de impureza</p>
+        <h2>Exemplo Arvore</h2>
+        <div class="image-row">
+          <img src="img/9.png" onclick="openModal('img14')">
         </div>
-
-        <aside class="notes">
-          “O ganho de informação mede o quanto uma divisão melhora os dados.”
-          “A árvore sempre escolhe a divisão que mais reduz a bagunça.”
-        </aside>
       </section>
 
       <!-- SLIDE 10 -->
       <section>
-        <h2>🌳 Crescimento</h2>
+        <h2>Gini vs Entropia</h2>
         <div class="card">
-          <ol>
-            <li>Começa com todos os dados</li>
-            <li>Escolhe melhor divisão</li>
-            <li>Divide</li>
-            <li>Repete</li>
-          </ol>
+          <p><span class="highlight">Gini:</span> mede a impureza</p>
+          <p><span class="highlight">Entropia:</span> mede a desordem</p>
         </div>
-
-        <aside class="notes">
-          “A árvore começa com todos os dados.”
-          “Depois divide…”
-          “Depois divide de novo…”
-          “E continua até organizar tudo.”
-        </aside>
+        <div class="image-row">
+          <img src="img/10.png" onclick="openModal('img15')">
+        </div>
       </section>
 
       <!-- SLIDE 11 -->
@@ -241,27 +215,13 @@ C → Gato
 
         <div class="image-row">
           <img src="img/overUnder.png" onclick="openModal('img4')">
+          <img src="img/11.png" onclick="openModal('img16')">
         </div>
 
         <aside class="notes">
           “Aqui temos o overfitting.”
           “É quando o modelo aprende até demais, até os erros dos dados.”
           “Ele funciona bem no treino, mas erra quando aparecem dados novos.”
-        </aside>
-      </section>
-
-      <!-- SLIDE 14 -->
-      <section>
-        <h2>📉 Underfitting</h2>
-        <div class="card">
-          <p>Modelo simples demais</p>
-          <p>Não aprende direito</p>
-        </div>
-
-        <aside class="notes">
-          “Já o underfitting é o contrário.”
-          “O modelo é simples demais…”
-          “E não consegue aprender direito.”
         </aside>
       </section>
 
@@ -312,6 +272,9 @@ C → Gato
             até deixá-los organizados.
           </p>
         </div>
+        <div class="image-row">
+          <img src="img/12.png" onclick="openModal('img17')">
+        </div>
 
         <aside class="notes">
           “Resumindo…”
@@ -328,21 +291,53 @@ C → Gato
   <div id="img1" class="modal" onclick="closeModal(event)">
     <img src="img/decisãoAnimal.png">
   </div>
-
   <div id="img2" class="modal" onclick="closeModal(event)">
     <img src="img/divisãoEspaço.png">
   </div>
-
   <div id="img3" class="modal" onclick="closeModal(event)">
     <img src="img/giniEntropia.png">
   </div>
-
   <div id="img4" class="modal" onclick="closeModal(event)">
     <img src="img/overUnder.png">
   </div>
-
   <div id="img5" class="modal" onclick="closeModal(event)">
     <img src="img/comparação.png">
+  </div>
+  <div id="img6" class="modal" onclick="closeModal(event)">
+    <img src="img/1.png">
+  </div>
+  <div id="img7" class="modal" onclick="closeModal(event)">
+    <img src="img/2.png">
+  </div>
+  <div id="img8" class="modal" onclick="closeModal(event)">
+    <img src="img/3.png">
+  </div>
+  <div id="img9" class="modal" onclick="closeModal(event)">
+    <img src="img/4.png">
+  </div>
+  <div id="img10" class="modal" onclick="closeModal(event)">
+    <img src="img/5.png">
+  </div>
+  <div id="img11" class="modal" onclick="closeModal(event)">
+    <img src="img/6.png">
+  </div>
+  <div id="img12" class="modal" onclick="closeModal(event)">
+    <img src="img/7.png">
+  </div>
+  <div id="img13" class="modal" onclick="closeModal(event)">
+    <img src="img/8.png">
+  </div>
+  <div id="img14" class="modal" onclick="closeModal(event)">
+    <img src="img/9.png">
+  </div>
+  <div id="img15" class="modal" onclick="closeModal(event)">
+    <img src="img/10.png">
+  </div>
+  <div id="img16" class="modal" onclick="closeModal(event)">
+    <img src="img/11.png">
+  </div>
+  <div id="img17" class="modal" onclick="closeModal(event)">
+    <img src="img/12.png">
   </div>
 
 
